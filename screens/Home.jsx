@@ -53,7 +53,7 @@ function Home() {
               gap: 50,
             }}
           >
-            {value.post.map((post, i) => (
+            {value.posts.map((post, i) => (
               <HomePost
                 key={i}
                 username={post.name}

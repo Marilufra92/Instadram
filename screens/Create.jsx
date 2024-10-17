@@ -3,6 +3,7 @@ import MyButton from "../components/Button";
 import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
 import Input from "../components/Input";
+import { useSessionContext } from "../utils/context";
 
 const containerStyle = {
   backgroundColor: "#e2f5c4",
@@ -31,6 +32,7 @@ const bottElimina = {
 function Create() {
   const [img, setImg] = useState(null);
   const [description, setDescription] = useState ('')
+  const value = useSessionContext()
 
   async function openCamera() {
     const permissionResult =
@@ -64,7 +66,8 @@ function Create() {
       description: description
 
     }
-    console.log(post)
+    value.setPosts([post, ...value.posts])
+    deleteImage()
 
   }
 

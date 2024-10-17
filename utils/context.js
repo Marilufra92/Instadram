@@ -16,7 +16,7 @@ function SessionProvider({children}){
     const [session, setSession] = useState()
     const [loading, setLoading] = useState(true)
 
-    const posts = [
+    const defaultPosts = [
         {
           name: "Misch",
           profilepic:
@@ -88,6 +88,8 @@ function SessionProvider({children}){
         },
       ];
 
+      const [posts, setPosts ] = useState(defaultPosts)
+
     useEffect (() => {loadSession()}, [])
     
     async function loadSession (){
@@ -115,7 +117,8 @@ function SessionProvider({children}){
         logout: logout,
         loading: loading,
 
-        post: posts
+        posts: posts,
+        setPosts: setPosts
     }
 
 
