@@ -30,7 +30,7 @@ function Home() {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: "#e2f5c4",
       }}
     >
       <ScrollView>
