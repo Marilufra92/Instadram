@@ -45,12 +45,14 @@ function Create() {
 
     console.log("abbiamo i permessi!");
 
-    const result = await ImagePicker.launchCameraAsync({
+    const result = await ImagePicker.launchImageLibraryAsync({
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     });
 
+    
+    
     const image = result.assets[0].uri;
     setImg(image);
   }
@@ -66,8 +68,10 @@ function Create() {
       description: description
 
     }
-    value.setPosts([post, ...value.posts])
+
+    value.addPost(post)
     deleteImage()
+
 
   }
 
